@@ -1,0 +1,18 @@
+/*Parte Do Danilo Super Bonitão👊😎🤏*/
+.containerDoTriangulo{
+    border: black solid 1px;
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    padding-left: 5%;
+}
+
+.containerImgTriangulo{
+    margin: auto;
+}
+
+.inputTriangulo{
+    width: 100px;
+}
+/* Fim da Parte Do Danilo Super Bonitão👊😎🤏*/

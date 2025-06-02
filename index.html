@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <title>2° Trabalho - Java</title>
+    </head>
+    <body>
+        <!--Encontre o triângulo: Dados três valores X, Y e Z, verificar se eles podem ser os
+        comprimentos dos lados de um triângulo e, se forem verificar se é um triângulo
+        equilátero, isósceles ou escalenos. Se eles não formarem um triângulo, escrever a
+        mensagem. Considere as seguintes propriedades:
+        ● O comprimento de cada lado em um triângulo émenor que a soma dos outros
+        dois lados;
+        ● Equiláteros: tem os comprimentos dos três lados iguais;
+        ● Isósceles: tem os comprimentos de dois lados iguais;
+        ● Escaleno: tem os comprimentos de três lados diferentes.-->
+        <div class="containerDoTriangulo">
+            <div>
+                <h1>Encontre o Triângulo</h1>
+                <label for="xTriangulo">X</label>
+                <input type="number" id="xTriangulo" class="inputTriangulo">
+                <br>
+                <label for="yTriangulo">Y</label>
+                <input type="number" id="yTriangulo" class="inputTriangulo">
+                <br>
+                <label for="zTriangulo">Z</label>
+                <input type="number" id="zTriangulo" class="inputTriangulo">
+                <br>
+                <button id="btCalcularTriangulo">calcular</button>
+                <h1>Tipo do Triangulo</h1>
+                <h2 id="resultadoTriangulo">💪🧐🤳</h2>
+            </div>
+            <div class="containerImgTriangulo">
+                <img src="img/sem-triangulo.png" width="200px" height="200px" id="imgTriangulo">
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
