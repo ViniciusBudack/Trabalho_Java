@@ -1,4 +1,11 @@
+.fundinho{
+    background-color: rgb(132, 132, 133);
+    width: 100%;
+    height: 100%;
+}
+
 /*Parte Do Danilo Super Bonitão👊😎🤏*/
+/*Inicio do calculo dos triangulos*/
 .containerDoTriangulo{
     border: black solid 1px;
     width: 600px;
@@ -7,12 +14,45 @@
     display: flex;
     padding-left: 5%;
 }
-
 .containerImgTriangulo{
     margin: auto;
+    border: black solid 1px;
 }
-
 .inputTriangulo{
     width: 100px;
 }
+/*final do calculo dos triangulos*/
+
+/*Inicio do calculo pra lanches*/
+.containerDosLanches{
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+}
+.tabelaLanches{
+    border: black solid 1px;
+    width: 100%;
+    border-collapse: collapse;
+}
+.colunaLanches{
+    text-align: left;
+    border: black solid 1px;
+    padding-left: 5px;
+}
+.colunaValor{
+    text-align: center;
+    border: black solid 1px;
+}
+.inputLanches{
+    width: 100%;
+}
+#btCalcularLanches{
+    width: 100%;
+    border-radius: 20px;
+}
+/*final do calculo pra lanches*/
+
+/*Inicio do Sistema de pagamentos*/
+/*final do Sistema de pagamentos*/
 /* Fim da Parte Do Danilo Super Bonitão👊😎🤏*/

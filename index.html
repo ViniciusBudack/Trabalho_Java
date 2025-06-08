@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css" type="text/css">
         <title>2° Trabalho - Java</title>
     </head>
-    <body>
+    <body class="fundinho">
         <!--Encontre o triângulo: Dados três valores X, Y e Z, verificar se eles podem ser os
         comprimentos dos lados de um triângulo e, se forem verificar se é um triângulo
         equilátero, isósceles ou escalenos. Se eles não formarem um triângulo, escrever a
@@ -15,7 +15,7 @@
         ● Equiláteros: tem os comprimentos dos três lados iguais;
         ● Isósceles: tem os comprimentos de dois lados iguais;
         ● Escaleno: tem os comprimentos de três lados diferentes.-->
-        <div class="containerDoTriangulo">
+        <div class="containerDoTriangulo" >
             <div>
                 <h1>Encontre o Triângulo</h1>
                 <label for="xTriangulo">X</label>
@@ -63,9 +63,60 @@
             <!-- 5 "ISABELLA") Calculadora de Crédito Bancário: Um banco concederáum crédito especial aos seus clientes, variável com o saldo médio no último ano. Faça uma página que leia o saldo
             médio de um cliente e calcule o valor do crédito de acordo com a tabela abaixo. Mostre uma mensagem informando o saldo médio e o valor do crédito. -->
         </div>
-        <div>
+        <div class="containerDosLanches">
             <!-- 6 "DANILO") Para uma lanchonete, faça uma página que leia o código do item pedido, a quantidade e calcule o valor a ser pago por aquele lanche. Considere que a cada execução
             somente serácalculado um item. O cardápio éo seguinte: -->
+            <table class="tabelaLanches">
+                <tr>
+                    <th>Lanche</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <th class="colunaLanches">Cachorro Quente</th>
+                    <th class="colunaValor">R$ 11,00</th>
+                    <td class="colunaLanches"><input type="number" class="inputLanches" id="quantCachorroQuente"></td>
+                    <td class="colunaValor" id="valorCachorroQuente">R$ 0.00</td>
+                </tr>
+                <tr>
+                    <th class="colunaLanches">Bauru</th>
+                    <th class="colunaValor">R$ 8,50</th>
+                    <td class="colunaLanches"><input type="number" class="inputLanches" id="quantBauru"></td>
+                    <td class="colunaValor" id="valorBauru">R$ 0.00</td>
+                </tr>
+                <tr>
+                    <th class="colunaLanches">Misto Quente</th>
+                    <th class="colunaValor">R$ 8,00</th>
+                    <td class="colunaLanches"><input type="number" class="inputLanches" id="quantMistoQuente"></td>
+                    <td class="colunaValor" id="valorMistoQuente">R$ 0.00</td>
+                </tr>
+                <tr>
+                    <th class="colunaLanches">Hamburguer</th>
+                    <th class="colunaValor">R$ 9,00</th>
+                    <td class="colunaLanches"><input type="number" class="inputLanches" id="quantHamburguer"></td>
+                    <td class="colunaValor" id="valorHamburguer">R$ 0.00</td>
+                </tr>
+                <tr>
+                    <th class="colunaLanches">Cheeseburguer</th>
+                    <th class="colunaValor">R$ 10,00</th>
+                    <td class="colunaLanches"><input type="number" class="inputLanches" id="quantCheeseburguer"></td>
+                    <td class="colunaValor" id="valorCheeseburguer">R$ 0.00</td>
+                </tr>
+                <tr>
+                    <th class="colunaLanches">Refrigerante</th>
+                    <th class="colunaValor">R$ 4,50</th>
+                    <td class="colunaLanches"><input type="number" class="inputLanches" id="quantRefrigerante"></td>
+                    <td class="colunaValor" id="valorRefrigerante">R$ 0.00</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button id="btCalcularLanches">Calcular</button></td>
+                </tr>
+                <tr >
+                    <th class="colunaLanches">Total</th>
+                    <td class="colunaValor" colspan="3" id="totalDeLanche" align="center">R$ 0.00</td>
+                </tr>
+            </table>
         </div>
         <div>
             <!-- 7 "ISABELLA") Sistema de Vendas: Elabore uma página que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de
@@ -85,6 +136,6 @@
             Professor Nível 2 R$17,00 por hora/aula
             Professor Nível 3 R$25,00 por hora/aula -->
         </div>
-        </body>
-        <script src="script.js"></script>
+    </body>
+    <script src="script.js"></script>
 </html>
