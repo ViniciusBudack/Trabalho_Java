@@ -126,7 +126,7 @@
                 c) Em duas vezes, preço normal de etiqueta sem juros
                 d) Em duas vezes, preço normal de etiqueta mais juros de 10%-->
         </div>
-        <div>
+        <div class="containerSistemaPagamentos">
             <!-- 8 "DANILO") Sistema de pagamentos: Uma escola faz o pagamento de seus professores por hora/aula. Faça uma página que solicite ao usuário, o nível do professor e a quantidade
             de horas/aula ele tem na semana. Em seguida, calcule e exiba o salário de um professor sabendo que a fórmula para o cálculo do salário é:
 
@@ -135,7 +135,34 @@
             Professor Nível 1 R$12,00 por hora/aula
             Professor Nível 2 R$17,00 por hora/aula
             Professor Nível 3 R$25,00 por hora/aula -->
+            <h1>Sistema de pagamentos</h1>
+            <br><br>
+            <table border="1">
+                <tr>
+                    <th rowspan="2">
+                        Nível do Professor <br><br>
+                        <label for="nivel1"><input type="radio" id="nivel1" name="nivel" value="1">Professor Nível 1</label>                        
+                        <br>
+                        <label for="nivel2"><input type="radio" id="nivel2" name="nivel" value="2">Professor Nível 2</label>                        
+                        <br>
+                        <label for="nivel3"><input type="radio" id="nivel3" name="nivel" value="3">Professor Nível 3</label>
+
+                    </th>
+                    <td>
+                        <label for="qtdHoras">Quantidade de horas trabalhadas</label><br>
+                        <input type="number" id="qtdHoras">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Pagamento</p>
+                        <p id="resultadoPagamento">R$ 0,00</p>
+                    </td>
+                </tr>
+            </table>
+            <button id="btCalcularPagamentos">Calcular</button>
         </div>
     </body>
     <script src="script.js"></script>
 </html>
+

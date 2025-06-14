@@ -6,7 +6,7 @@ let zTriangulo = document.querySelector("#zTriangulo");
 let btCalcularTriangulo = document.querySelector("#btCalcularTriangulo");
 let resultadoTriangulo = document.querySelector("#resultadoTriangulo");
 let imgTriangulo = document.querySelector("#imgTriangulo");
-
+/*
 function calcularTipoDeTriangulo(){
     let x = Number(xTriangulo.value);
     let y = Number(yTriangulo.value);
@@ -24,10 +24,10 @@ function calcularTipoDeTriangulo(){
         imgTriangulo.src = "img/trianguloIsoceles.png";
     }if ( x != y && z != y && x != z){// Verifica se não é um triângulo Escaleno
         resultadoTriangulo.textContent = "Escaleno";
-        imgTriangulo.src = "img/.jpeg";
+        imgTriangulo.src = "img/trianguloEscaleno.png";
     }
     
-}
+}*/
 
 btCalcularTriangulo.onclick = function(){
     calcularTipoDeTriangulo();
@@ -99,6 +99,33 @@ btCalcularLanches.onclick = function(){
 /*final do calculo pra lanches😎*/
 
 /*Inicio do Sistema de pagamentos😎*/
+let nivel1 = document.querySelector("#nivel1");
+let nivel2 = document.querySelector("#nivel2");
+let nivel3 = document.querySelector("#nivel3");
+let qtdHoras = document.querySelector("#qtdHoras");
+let resultadoPagamento = document.querySelector("#resultadoPagamento");
+let btCalcularPagamentos = document.querySelector("#btCalcularPagamentos");
+
+function calcularPagamentos(){
+    const nivelSelecionado = document.querySelector('input[name="nivel"]:checked');
+
+    if (nivelSelecionado) {
+        const valorPorHora = nivelSelecionado.value;
+        if (valorPorHora === "1") {
+            resultadoPagamento.textContent = "R$" + (12 * Number(qtdHoras.value));
+        } else if (valorPorHora === "2") {
+            resultadoPagamento.textContent = "R$" + (17 * Number(qtdHoras.value));
+        } else if (valorPorHora === "3") {
+            resultadoPagamento.textContent = "R$" + (25 * Number(qtdHoras.value));
+        }
+    } else {
+        resultadoPagamento.textContent = "Selecione um nível.";
+    }
+}
+
+btCalcularPagamentos.onclick = function(){
+    calcularPagamentos();
+}
 /*final do Sistema de pagamentos😎*/
 
 /* Fim da Parte Do Danilo Super Bonitão👊😎🤏*/
