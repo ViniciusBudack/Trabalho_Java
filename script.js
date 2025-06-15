@@ -6,7 +6,7 @@ let zTriangulo = document.querySelector("#zTriangulo");
 let btCalcularTriangulo = document.querySelector("#btCalcularTriangulo");
 let resultadoTriangulo = document.querySelector("#resultadoTriangulo");
 let imgTriangulo = document.querySelector("#imgTriangulo");
-/*
+
 function calcularTipoDeTriangulo(){
     let x = Number(xTriangulo.value);
     let y = Number(yTriangulo.value);
@@ -27,7 +27,7 @@ function calcularTipoDeTriangulo(){
         imgTriangulo.src = "img/trianguloEscaleno.png";
     }
     
-}*/
+}
 
 btCalcularTriangulo.onclick = function(){
     calcularTipoDeTriangulo();
