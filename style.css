@@ -1,58 +1,211 @@
-.fundinho{
-    background-color: rgb(132, 132, 133);
-    width: 100%;
-    height: 100%;
+body {
+    background-color: #848485;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
-/*Parte Do Danilo Super Bonitão👊😎🤏*/
-/*Inicio do calculo dos triangulos*/
-.containerDoTriangulo{
-    border: black solid 1px;
-    width: 600px;
-    margin: auto;
-    text-align: center;
+h1 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #333;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+label {
+    font-weight: bold;
+    color: #222;
+}
+
+input[type="number"], select {
+    padding: 6px 10px;
+    margin: 6px 0;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    width: 160px;
+    font-size: 1em;
+    background: #f8f8f8;
+}
+
+button {
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    margin: 10px 0;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #444;
+}
+
+.containerDoTriangulo,
+.container_imc,
+.containerImposto,
+.containerSalario,
+.containerSistemaPagamentos {
+    background: #f4f4f4;
+    border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    width: 350px;
+    margin: 30px auto 20px auto;
+    padding: 24px 18px 18px 18px;
     display: flex;
-    padding-left: 5%;
+    flex-direction: column;
+    align-items: center;
 }
-.containerImgTriangulo{
-    margin: auto;
-    border: black solid 1px;
+
+.containerDoTriangulo {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 700px;
+    padding: 24px 32px;
 }
-.inputTriangulo{
+
+.containerImgTriangulo {
+    margin-left: 30px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 220px;
+}
+
+.inputTriangulo {
+    width: 80px;
+}
+
+#imgTriangulo {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #eee;
+}
+
+.container_imc input[type="number"] {
+    width: 120px;
+    margin: 0 5px;
+}
+
+.containerImposto input[type="number"] {
+    width: 140px;
+}
+
+.containerSalario select {
+    width: 170px;
+}
+
+.containerSalario input[type="number"] {
+    width: 140px;
+}
+
+.containerSistemaPagamentos table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+
+.containerSistemaPagamentos th, 
+.containerSistemaPagamentos td {
+    padding: 10px 16px;
+    border: 1px solid #bbb;
+    font-size: 1em;
+}
+
+.containerSistemaPagamentos input[type="number"] {
     width: 100px;
 }
-/*final do calculo dos triangulos*/
 
-/*Inicio do calculo pra lanches*/
-.containerDosLanches{
-    width: 600px;
-    margin: auto;
-    text-align: center;
-    display: flex;
+#resultadoPagamento {
+    font-size: 1.2em;
+    color: #1a7e1a;
+    font-weight: bold;
 }
-.tabelaLanches{
-    border: black solid 1px;
+
+.containerDosLanches {
+    width: 800px;
+    margin: 30px auto 20px auto;
+    background: #f4f4f4;
+    border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 24px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabelaLanches {
+    border: 1px solid #bbb;
     width: 100%;
     border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
 }
-.colunaLanches{
-    text-align: left;
-    border: black solid 1px;
-    padding-left: 5px;
+
+.tabelaLanches th, .tabelaLanches td {
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+    font-size: 1em;
 }
-.colunaValor{
-    text-align: center;
-    border: black solid 1px;
+
+.tabelaLanches th {
+    background: #eaeaea;
+    font-weight: bold;
 }
-.inputLanches{
-    width: 100%;
+
+.inputLanches {
+    width: 70px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    background: #f8f8f8;
 }
-#btCalcularLanches{
+
+#btCalcularLanches {
     width: 100%;
     border-radius: 20px;
+    background: #222;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 1em;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
-/*final do calculo pra lanches*/
 
-/*Inicio do Sistema de pagamentos*/
-/*final do Sistema de pagamentos*/
-/* Fim da Parte Do Danilo Super Bonitão👊😎🤏*/
+#totalDeLanche {
+    font-size: 1.2em;
+    color: #1a7e1a;
+    font-weight: bold;
+    background: #f8fff8;
+}
+
+@media (max-width: 900px) {
+    .containerDoTriangulo,
+    .containerDosLanches {
+        width: 98vw;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .containerImgTriangulo {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .tabelaLanches {
+        font-size: 0.95em;
+    }
+}

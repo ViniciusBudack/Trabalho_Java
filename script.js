@@ -127,5 +127,123 @@ btCalcularPagamentos.onclick = function(){
     calcularPagamentos();
 }
 /*final do Sistema de pagamentos😎*/
-
 /* Fim da Parte Do Danilo Super Bonitão👊😎🤏*/
+
+/*Incio Imc*/
+let peso = document.querySelector("#peso");
+let altura = document.querySelector("#altura");
+let btCalcularImc = document.querySelector("#BtIMC");
+let resultadoImc = document.querySelector("#resultado_IMC");
+
+function calcularImc() {
+    let pesoValue = parseFloat(peso.value);
+    let alturaValue = parseFloat(altura.value);
+
+    if (isNaN(pesoValue) || isNaN(alturaValue) || pesoValue <= 0 || alturaValue <= 0) {
+        resultadoImc.textContent = "Preencha os campos corretamente!";
+        return;
+    }
+
+    let imc = pesoValue / (alturaValue * alturaValue);
+    imc = imc.toFixed(2);
+    let classificacao = "";
+
+    
+    if (imc < 18.5) {
+        classificacao = "Abaixo do peso";
+    } 
+    else if (imc < 25) {
+        classificacao = "Peso normal";
+    } 
+    else if (imc < 30) {
+        classificacao = "Sobrepeso";
+    } 
+    else if (imc < 35) {
+        classificacao = "Obesidade grau 1";
+    } 
+    else if (imc < 40) {
+        classificacao = "Obesidade grau 2";
+    } 
+    else {
+        classificacao = "Obesidade grau 3";
+    }
+
+    resultadoImc.textContent = "Seu IMC é: " + imc + " - " + classificacao;
+}
+
+btCalcularImc.onclick = function() {
+    calcularImc();
+};
+
+/*Fim dos IMC*/
+/*Começo Impostos*/
+let anoCarro = document.querySelector("#anoCarro");
+let valorCarro = document.querySelector("#valorCarro");
+let btCalcularImposto = document.querySelector("#btCalcularImposto");
+let resultadoImposto = document.querySelector("#resultadoImposto");
+
+function calcularImposto() {
+    let ano = parseInt(anoCarro.value);
+    let valor = parseFloat(valorCarro.value);
+
+    if (isNaN(ano) || isNaN(valor) || ano <= 0 || valor <= 0) {
+        resultadoImposto.textContent = "Preencha os campos corretamente!";
+        return;
+    }
+
+    let taxa = 0;
+    if (ano < 1990) {
+        taxa = 0.01;
+    } else {
+        taxa = 0.015;
+    }
+
+    let imposto = valor * taxa;
+    resultadoImposto.textContent = "Imposto a ser pago: R$ " + imposto.toFixed(2);
+}
+
+btCalcularImposto.onclick = function() {
+    calcularImposto();
+};
+/*fim Impostos*/
+
+let cargo = document.querySelector("#cargo");
+let salarioAntigo = document.querySelector("#salarioAntigo");
+let btCalcularSalario = document.querySelector("#btCalcularSalario");
+let resultadoSalario = document.querySelector("#resultadoSalario");
+
+function calcularSalario() {
+    let salario = parseFloat(salarioAntigo.value);
+    let aumento = 0;
+
+    if (isNaN(salario) || salario <= 0) {
+        resultadoSalario.textContent = "Preencha o salário corretamente!";
+        return;
+    }
+
+    switch (cargo.value) {
+        case "gerente":
+            aumento = 0.10;
+            break;
+        case "engenheiro":
+            aumento = 0.20;
+            break;
+        case "tecnico":
+            aumento = 0.30;
+            break;
+        default:
+            aumento = 0.40;
+    }
+
+    let novoSalario = salario * (1 + aumento);
+    let diferenca = novoSalario - salario;
+
+    resultadoSalario.textContent = 
+        "Salário antigo: R$ " + salario.toFixed(2) +
+        " | Novo salário: R$ " + novoSalario.toFixed(2) +
+        " | Diferença: R$ " + diferenca.toFixed(2);
+}
+
+btCalcularSalario.onclick = function() {
+    calcularSalario();
+};
