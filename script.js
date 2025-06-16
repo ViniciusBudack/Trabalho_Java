@@ -294,3 +294,36 @@ function calcularSalario() {
 btCalcularSalario.onclick = function() {
     calcularSalario();
 };
+
+/* Início da Calculadora de Crédito Bancário :) */
+let saldoMedio = document.querySelector("#saldoMedio");
+let btCalcularCredito = document.querySelector("#btCalcularCredito");
+let resultadoCredito = document.querySelector("#resultadoCredito");
+
+function calcularCredito() {
+    let saldo = Number(saldoMedio.value);
+    let percentual = 0;
+
+    if (isNaN(saldo) || saldo < 0) {
+        resultadoCredito.textContent = "Preencha corretamente!";
+        return;
+    }
+
+    if (saldo >= 0 && saldo <= 200) {
+        percentual = 0;
+    } else if (saldo <= 400) {
+        percentual = 20;
+    } else if (saldo <= 600) {
+        percentual = 30;
+    } else {
+        percentual = 40;
+    }
+
+    let credito = saldo * (percentual / 100);
+    resultadoCredito.innerHTML = `Saldo médio: R$ ${saldo.toFixed(2)} <br> Crédito: R$ ${credito.toFixed(2)} (${percentual}%)`;
+}
+
+btCalcularCredito.onclick = function() {
+    calcularCredito();
+};
+/* Fim da Calculadora de Crédito Bancário */
