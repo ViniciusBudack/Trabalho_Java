@@ -49,6 +49,9 @@ let valorCheeseburguer = document.querySelector("#valorCheeseburguer");
 let valorRefrigerante = document.querySelector("#valorRefrigerante");
 let btCalcularLanches = document.querySelector("#btCalcularLanches");
 let totalDeLanche = document.querySelector("#totalDeLanche");
+/*sera utilizado no Sistema de condicao de pagamento*/
+let totalDeLanchePraVenda = document.querySelector("#totalDeLanchePraVenda");
+/*sera utilizado no Sistema de condicao de pagamento*/
 
 function calcularLanches(){
     /*na primeira parte esta sendo criado as variavei já com o valor total de cada lanche*/
@@ -63,40 +66,84 @@ function calcularLanches(){
         valorCachorroQuente.textContent = "R$ " + cachorroQuente.toFixed(2);
     }else{
         valorCachorroQuente.textContent = "R$ " + 0;
-    }
+        cachorroQuente = 0;    }
     if(bauru >= 0){
         valorBauru.textContent = "R$ " + bauru.toFixed(2);
     }else{
         valorBauru.textContent = "R$ " + 0;
+        bauru = 0;
     }
     if(mistoQuente >= 0){
         valorMistoQuente.textContent = "R$ " + mistoQuente.toFixed(2);
     }else{
         valorMistoQuente.textContent = "R$ " + 0;
+        mistoQuente = 0;
     }
     if(hamburguer >= 0){
         valorHamburguer.textContent = "R$ " + hamburguer.toFixed(2);
     }else{
         valorHamburguer.textContent = "R$ " + 0;
+        hamburguer = 0;
     }
     if(cheeseburguer >= 0){
         valorCheeseburguer.textContent = "R$ " + cheeseburguer.toFixed(2);
     }else{
         valorCheeseburguer.textContent = "R$ " + 0;
+        cheeseburguer = 0;
     }
     if(refrigerante >= 0){
         valorRefrigerante.textContent = "R$ " + refrigerante.toFixed(2);
     }else{
         valorRefrigerante.textContent = "R$ " + 0;
+        refrigerante = 0;
     }
     /*soma total de todos os lanches */
     totalDeLanche.textContent = "R$ " + (cachorroQuente + bauru + mistoQuente + hamburguer + cheeseburguer + refrigerante).toFixed(2);
+
+    totalDeLanchePraVenda.textContent = (cachorroQuente + bauru + mistoQuente + hamburguer + cheeseburguer + refrigerante).toFixed(2);                                                                                  
 }
 
 btCalcularLanches.onclick = function(){
     calcularLanches();
 }
 /*final do calculo pra lanches😎*/
+
+/*Inicio do Sistema de condicao de pagamento😎*/
+let dinheiroAvista = document.querySelector("#dinheiroAvista");
+let cartaoAvista = document.querySelector("#cartaoAvista");
+let duasVezesSenJusros = document.querySelector("#duasVezesSenJusros");
+let duasVezesComJusros = document.querySelector("#duasVezesComJusros");
+let resultadoPagamentoComAFormaDPagamento = document.querySelector("#resultadoPagamentoComAFormaDPagamento");
+let btCalcularFormaDPagamento = document.querySelector("#btCalcularFormaDPagamento");
+
+
+function calcularComAformaDePagamento(){
+    const formaSelecionada = document.querySelector('input[name="pagamento"]:checked');
+
+    if (formaSelecionada) {
+        const condicao = formaSelecionada.value;
+        const total = Number(totalDeLanchePraVenda.textContent);
+        if (isNaN(total) || total <= 0) {
+            resultadoPagamentoComAFormaDPagamento.textContent = "R$ 0.00";
+            return;
+        }else {
+            if (condicao === "1") {
+                resultadoPagamentoComAFormaDPagamento.textContent = "R$ " + (total-(0.1 * total)).toFixed(2);
+            } else if (condicao === "2") {
+                resultadoPagamentoComAFormaDPagamento.textContent = "R$ " + (total-(0.15 * total)).toFixed(2);
+            } else if (condicao === "3") {
+                resultadoPagamentoComAFormaDPagamento.textContent = "2x " + "R$ " + (total / 2).toFixed(2);
+            } else if (condicao === "4") {
+                resultadoPagamentoComAFormaDPagamento.textContent = "2x " + "R$ " + ((total + (0.1 * total)) / 2).toFixed(2);
+            }
+        }
+    }
+}
+
+btCalcularFormaDPagamento.onclick = function(){
+    calcularComAformaDePagamento();
+}
+/*final do Sistema de condicao de pagamento😎*/
 
 /*Inicio do Sistema de pagamentos😎*/
 let nivel1 = document.querySelector("#nivel1");
